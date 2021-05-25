@@ -1,6 +1,8 @@
 # BinanceTR-Python-Client
 BinanceTR API'ını kullanmak için mini Python kütüphanesi
 
+https://github.com/futuristicexchanger/BinanceTrApi reposundan çokça esinlendim, bazı yerlerde farklı implementasyonlar tercih ettiğim için bu mini-projeyi yazmaya karar verdim.
+
 ## Kullanım
 Dosyaları indirip kullanmak istediğiniz yere taşıyın.
 
