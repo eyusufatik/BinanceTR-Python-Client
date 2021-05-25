@@ -126,7 +126,8 @@ class APIClient:
 
     def place_order(self, symbol, order_type, order_side, quantity, price=""):
         """
-        Places an order of an type
+        Places an order of any type
+        
         :param symbol: e.g. BTC_USDT
         :param order_type: OrderType.Limit or OrderType.Market or OrderType.Stop_Limit
         :param order_side: OrderSide.Buy or OrderSide.Sell
@@ -145,6 +146,7 @@ class APIClient:
     def cancel_order(self, order_ID):
         """
         Cancels an order with given ID
+        
         :param order_ID: Order ID as a string
         :return: Returns server response
         """
