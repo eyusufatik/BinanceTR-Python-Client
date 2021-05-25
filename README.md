@@ -39,3 +39,5 @@ client = APIClient("__API_KEY__", "__API_SECRET__")
     print(e)
   
   print(response) # respsone["data"]["list"] ile sadece emirleri yazdırabilirsiniz.
+  
+* Diğer fonksiyonlar için APIClient.py dosyasını inceleyebilirsiniz.
