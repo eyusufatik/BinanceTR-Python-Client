@@ -1,43 +1,38 @@
 # BinanceTR-Python-Client
-BinanceTR API'ını kullanmak için mini Python kütüphanesi
+Mini python library to use BinanceTr API
 
-https://github.com/futuristicexchanger/BinanceTrApi reposundan çokça esinlendim, bazı yerlerde farklı implementasyonlar tercih ettiğim için bu mini-projeyi yazmaya karar verdim.
-
-## Kullanım
-Dosyaları indirip kullanmak istediğiniz yere taşıyın.
-
+## Usage
+Clone the repo and move files to your project.
     git clone https://github.com/eyusufatik/BinanceTR-Python-Client.git
 
-Daha sonra bir .py dosyasında küütphaneyi import edin.
+Import the library.
 
 ```python
 from APIClient import *
 ```
 
-Client objesini oluşturun. 
-
+Create the client object.
 
 ```python
 client = APIClient("__API_KEY__", "__API_SECRET__")
 ```
-(Not: API key ve secretınızı dosyanızda string halinde tutmak yerine environment variable olarak tutmanızda fayda var, eğer online bir VCS kullanacaksanız bunların internete düşmesi çok tehlikeli.)
 
-* BTCUSDT paritesinde daha önce yapmış olduğumuz AL ve SAT işlemlerini görelim.
+(Note: You should store your api-key and api-secret in environment variables, if you plan to upload your project on any platform)
+
+* Let's see the completed BUY and SELL transactions for BTCUSDT parity on our account.
 
   ```python
   response = client.get_orders("BTC_USDT", Orders.Closed, OrderSide.Both)
 
-  print(response) # respsone["data"]["list"] ile sadece emirleri yazdırabilirsiniz.
+  print(response) # respsone["data"]["list"] to print only the orders
   ```
 
-* BTCUSDT paritesinde emir girelim
+* Send order for BTCUSDT parity.
   ```python
   try:
     buy_response = client.place_order("BTC_USDT", OrderType.Limit, OrderSide.Buy, 1, 39000)
     print(buy_response)
   except Exception as e:
     print(e)
-  
-  print(response) # respsone["data"]["list"] ile sadece emirleri yazdırabilirsiniz.
-  
-* Diğer fonksiyonlar için APIClient.py dosyasını inceleyebilirsiniz.
+   ```
+* For other use cases take a look at the APIClient.py file.
